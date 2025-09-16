@@ -13,10 +13,7 @@ export default function Footer() {
           className="text-center"
         >
           <p className="text-sm text-muted-foreground flex items-center justify-center gap-2">
-            © {new Date().getFullYear()} Yadhu Krishnan PS. Built with 
-            <Heart className="w-4 h-4 text-primary animate-pulse" />
-            and React
-          </p>
+            © {new Date().getFullYear()} Yadhu Krishnan PS. </p>
         </motion.div>
       </div>
     </footer>
