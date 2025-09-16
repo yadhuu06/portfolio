@@ -1,0 +1,160 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Definition of the design system. All colors, gradients, fonts, etc should be defined here. 
+All colors MUST be HSL.
+*/
+
+@layer base {
+  :root {
+    /* Core Colors - Dark Futuristic Theme */
+    --background: 0 0% 0%;
+    --foreground: 160 100% 95%;
+    
+    --card: 260 100% 3%;
+    --card-foreground: 160 100% 95%;
+    
+    --popover: 260 100% 5%;
+    --popover-foreground: 160 100% 95%;
+    
+    /* Primary - Neon Green */
+    --primary: 160 100% 50%;
+    --primary-foreground: 0 0% 0%;
+    --primary-glow: 160 100% 60%;
+    
+    /* Secondary - Electric Violet */
+    --secondary: 270 91% 65%;
+    --secondary-foreground: 0 0% 100%;
+    
+    /* Accent - Cyber Yellow */
+    --accent: 51 100% 50%;
+    --accent-foreground: 0 0% 0%;
+    
+    /* Muted - Dark Gray */
+    --muted: 260 10% 15%;
+    --muted-foreground: 260 5% 60%;
+    
+    --destructive: 0 84% 60%;
+    --destructive-foreground: 0 0% 98%;
+    
+    --border: 270 50% 20%;
+    --input: 270 50% 10%;
+    --ring: 160 100% 50%;
+    
+    --radius: 0.75rem;
+    
+    /* Custom Design Tokens */
+    --neon-green: 160 100% 50%;
+    --neon-violet: 270 91% 65%;
+    --neon-yellow: 51 100% 50%;
+    --dark-violet: 260 100% 10%;
+    --dark-surface: 260 50% 5%;
+    
+    /* Gradients */
+    --gradient-primary: linear-gradient(135deg, hsl(var(--neon-violet)), hsl(var(--primary)));
+    --gradient-dark: linear-gradient(180deg, hsl(var(--background)), hsl(var(--dark-violet)));
+    --gradient-glow: linear-gradient(135deg, hsl(var(--primary)), hsl(var(--accent)));
+    --gradient-cyber: linear-gradient(90deg, hsl(var(--neon-violet)), hsl(var(--primary)), hsl(var(--accent)));
+    
+    /* Shadows & Effects */
+    --shadow-neon: 0 0 30px hsl(var(--primary) / 0.5);
+    --shadow-violet: 0 0 40px hsl(var(--neon-violet) / 0.4);
+    --shadow-glow: 0 10px 40px -10px hsl(var(--primary) / 0.6);
+    --shadow-card: 0 10px 50px -20px hsl(var(--neon-violet) / 0.3);
+    
+    /* Animations */
+    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    --transition-bounce: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+    
+    /* Typography */
+    --font-display: 'Orbitron', monospace;
+    --font-body: 'Inter', sans-serif;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: var(--font-body);
+  }
+  
+  h1, h2, h3, h4, h5, h6 {
+    font-family: var(--font-display);
+  }
+  
+  /* Custom Scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    @apply bg-background;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    @apply bg-primary/20 rounded-full;
+    transition: background 0.3s;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    @apply bg-primary/40;
+  }
+}
+
+/* Glow Effects */
+@layer utilities {
+  .glow-primary {
+    box-shadow: var(--shadow-neon);
+  }
+  
+  .glow-violet {
+    box-shadow: var(--shadow-violet);
+  }
+  
+  .text-glow {
+    text-shadow: 0 0 20px currentColor;
+  }
+  
+  .gradient-text {
+    background: var(--gradient-cyber);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Animations */
+  @keyframes pulse-glow {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes glitch {
+    0%, 100% { transform: translate(0); }
+    20% { transform: translate(-1px, 1px); }
+    40% { transform: translate(-1px, -1px); }
+    60% { transform: translate(1px, 1px); }
+    80% { transform: translate(1px, -1px); }
+  }
+  
+  .animate-pulse-glow {
+    animation: pulse-glow 2s ease-in-out infinite;
+  }
+  
+  .animate-float {
+    animation: float 3s ease-in-out infinite;
+  }
+  
+  .animate-glitch {
+    animation: glitch 0.3s ease-in-out infinite;
+  }
+}
