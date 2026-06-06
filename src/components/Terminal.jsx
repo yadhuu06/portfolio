@@ -3,15 +3,15 @@ import { motion, AnimatePresence } from 'framer-motion';
 
 const terminalData = {
   help: `Available commands:
-  yadhu --about      About Yadhu
-  yadhu --skills     Technical skills
-  yadhu --experience Work experience
-  yadhu --projects   Featured projects
-  yadhu --contact    Contact information
-  yadhu --social     Social links
-  yadhu --guinness   Guinness World Record
-  clear              Clear terminal
-  help               Show this help`,
+  about        About Yadhu
+  skills       Technical skills
+  experience   Work experience
+  projects     Featured projects
+  contact      Contact information
+  social       Social links
+  guinness     Guinness World Record
+  clear        Clear terminal
+  help         Show this help`,
 
   about: `╔══════════════════════════════════════════════╗
 ║           YADHU KRISHNAN PS                  ║
@@ -152,7 +152,7 @@ const Terminal = () => {
   }, [isOpen]);
 
   const processCommand = (cmd) => {
-    const trimmed = cmd.trim().toLowerCase();
+    const trimmed = cmd.trim().toLowerCase().replace('--', '');
 
     if (trimmed === 'clear') {
       setHistory([]);
@@ -163,12 +163,8 @@ const Terminal = () => {
       return terminalData.help;
     }
 
-    if (trimmed.startsWith('yadhu')) {
-      const flag = trimmed.split('--')[1]?.trim();
-      if (flag && terminalData[flag]) {
-        return terminalData[flag];
-      }
-      return 'Usage: yadhu --[command]\nType "help" for available commands.';
+    if (terminalData[trimmed]) {
+      return terminalData[trimmed];
     }
 
     return `Command not found: ${cmd}\nType "help" for available commands.`;
