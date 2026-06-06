@@ -136,14 +136,21 @@ const GitHubStats = () => {
               marginBottom: '24px',
             }}>
               <p style={{ color: '#a1a1aa', fontSize: '14px', marginBottom: '16px' }}>Contribution Graph</p>
-              <img
-                src={`https://ghchart.rshah.org/22c55e/${username}`}
-                alt="GitHub Contribution Graph"
-                style={{
-                  width: '100%',
-                  borderRadius: '8px',
-                }}
-              />
+              <div style={{
+                background: '#0d1117',
+                borderRadius: '8px',
+                padding: '16px',
+              }}>
+                <img
+                  src={`https://ghchart.rshah.org/22c55e/${username}`}
+                  alt="GitHub Contribution Graph"
+                  style={{
+                    width: '100%',
+                    borderRadius: '4px',
+                    filter: 'invert(1) hue-rotate(180deg)',
+                  }}
+                />
+              </div>
             </div>
 
             {/* Top Languages */}
