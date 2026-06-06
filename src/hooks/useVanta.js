@@ -1,35 +1,38 @@
-import { useEffect, useState } from 'react';
-import BIRDS from 'vanta/dist/vanta.birds.min';
+import { useEffect, useRef } from 'react';
+import * as THREE from 'three';
+import NET from 'vanta/dist/vanta.net.min';
 
-const useVanta = (ref) => {
-  const [vantaEffect, setVantaEffect] = useState(null);
+const useVanta = (containerRef) => {
+  const vantaRef = useRef(null);
 
   useEffect(() => {
-    if (!vantaEffect && ref.current) {
-      setVantaEffect(
-        BIRDS({
-          el: ref.current,
-          mouseControls: true,
-          touchControls: true,
-          gyroControls: false,
-          minHeight: 200.00,
-          minWidth: 200.00,
-          scale: 1.00,
-          scaleMobile: 1.00,
-          backgroundColor: 0x10132e,
-          color1: 0x00ff40,
-          color2: 0x007bff,
-          birdSize: 1.2,
-          speed: 1.5,
-        })
-      );
-    }
-    return () => {
-      if (vantaEffect) vantaEffect.destroy();
-    };
-  }, [vantaEffect, ref]);
+    if (!containerRef.current) return;
 
-  return vANTAEffect;
+    vantaRef.current = NET({
+      el: containerRef.current,
+      THREE: THREE,
+      mouseControls: true,
+      touchControls: true,
+      gyroControls: false,
+      minHeight: 200.0,
+      minWidth: 200.0,
+      scale: 1.0,
+      scaleMobile: 1.0,
+      color: 0x6366f1,
+      backgroundColor: 0x0f0f0f,
+      points: 8.0,
+      maxDistance: 20.0,
+      spacing: 18.0,
+    });
+
+    return () => {
+      if (vantaRef.current) {
+        vantaRef.current.destroy();
+      }
+    };
+  }, [containerRef]);
+
+  return vantaRef.current;
 };
 
 export default useVanta;

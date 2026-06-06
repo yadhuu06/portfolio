@@ -1,0 +1,139 @@
+\documentclass[a4paper,9.5pt]{article}
+\usepackage{geometry}
+\geometry{margin=0.6in}
+\usepackage{enumitem}
+\usepackage{titlesec}
+\usepackage[hidelinks]{hyperref}
+\usepackage{ragged2e}
+
+% Section title style
+\titleformat{\section}{\normalfont\Large\bfseries}{}{0pt}{}
+\titlespacing{\section}{0pt}{6pt}{4pt}
+\setlength{\parskip}{2pt}
+
+% List spacing
+\setlist[itemize]{leftmargin=12pt, noitemsep, topsep=0pt}
+
+% Command to align dates right
+\newcommand{\job}[3]{%
+  \noindent\textbf{#1} \hfill \textit{#2}\\%
+  \RaggedRight #3\vspace{4pt}%
+}
+
+\begin{document}
+\pagestyle{empty}
+
+\begin{center}
+    {\LARGE\textbf{Yadhu Krishnan PS}}\\[6pt]
+    \hrule \\[6pt]
+    \begin{tabular}{c c c c c}
+        \href{mailto:yadhuu.ps@gmail.com}{yadhuu.ps@gmail.com} &
+        \href{tel:+916238311034}{+91 6238311034} &
+        \href{https://www.linkedin.com/in/yadhu-krishnan-s}{linkedin.com/in/yadhu-krishnan-s} &
+        \href{https://github.com/yadhuu06}{github.com/yadhuu06} &
+        \href{https://yadhuu.live}{yadhuu.live}
+    \end{tabular}
+\end{center}
+
+
+\section*{Professional Summary}
+Lead AI Engineer with 20+ months of experience building enterprise AI platforms. Currently leading a team of 8 at Glimmora International, delivering scalable AI solutions. Contributed to a \textbf{Guinness World Record} achievement by delivering 12 AI platforms in a 24-hour hackathon. Skilled in Python, Django, React, LangChain, and cloud deployments. Transitioned from accounting to tech through self-learning, bringing strong analytical thinking and business awareness to software development.
+
+\section*{Technical Skills}
+\begin{itemize}
+    \item \textbf{Languages:} Python, JavaScript, TypeScript, SQL, HTML, CSS
+    \item \textbf{Frameworks/Libraries:} Django, Django REST Framework, FastAPI, React.js, LangChain
+    \item \textbf{AI/ML:} LangChain, OpenAI API, Prompt Engineering, AI Platform Development
+    \item \textbf{Backend \& Database:} Django ORM, PostgreSQL, Redis, MongoDB
+    \item \textbf{Cloud/Deployment:} AWS (EC2), Vercel, GCP, Docker
+    \item \textbf{Integrations:} Razorpay, Google OAuth, Celery (Async Processing), WebSocket
+    \item \textbf{Tools:} Git, GitHub, Postman
+    \item \textbf{Practices:} RESTful APIs, JWT Authentication, Team Leadership, Agile
+\end{itemize}
+
+
+\section*{Work Experience}
+
+\job{Lead AI Engineer}{Apr 2025 -- Present}{%
+Glimmora International, India
+\begin{itemize}
+    \item Leading a team of 8 (5 developers + 3 interns) in enterprise AI platform development.
+    \item Managing 2 primary projects and delivered 5 projects last month.
+    \item Contributed \textbf{12 AI platforms} during Guinness World Record 24-hour hackathon (54 total platforms built).
+    \item Architecting and overseeing development of scalable AI solutions using Python, Django, React, and LangChain.
+\end{itemize}
+}
+
+\job{AI Full-Stack Developer}{Oct 2024 -- Apr 2025}{%
+Glimmora International, India
+\begin{itemize}
+    \item Developed AI-powered enterprise platforms using Python, Django, React, and LangChain.
+    \item Built REST APIs and integrated AI workflows for various business solutions.
+    \item \textbf{Promoted to Lead AI Engineer within 6 months} due to exceptional performance.
+\end{itemize}
+}
+
+\job{Accountant cum Manager}{Aug 2021 -- Dec 2023}{%
+Capital Petroleum and Spiceway Enterprises Pvt Ltd, Kerala
+\begin{itemize}
+    \item Managed financial records and budgeting with 100\% accuracy.
+    \item Supervised daily operations and led a team, improving workflow efficiency.
+\end{itemize}
+}
+
+\section*{Achievements}
+\begin{itemize}
+    \item \textbf{Guinness World Record Holder (May 2025):} Part of Glimmora International's record-breaking 24-hour AI Platform Development Hackathon. Personally contributed 12 out of 54 enterprise AI platforms built.
+    \item \textbf{Rapid Career Growth:} Promoted from AI Full-Stack Developer to Lead AI Engineer in just 6 months.
+    \item \textbf{Team Leadership:} Currently managing a team of 8 members including developers and interns.
+\end{itemize}
+
+\section*{Projects}
+
+\job{Bit Code – Real-time Coding Battle Platform  \hfill \textbf{Live:} \href{https://www.bitcode.live/}{bitcode.live}}{}{%
+\textit{Tech Stack: Python, Django, React.js, PostgreSQL, Celery-Beat, Redis, Docker, WebSocket}
+\begin{itemize}
+    \item Built scalable backend and REST APIs enabling real-time coding battles for users.
+    \item Designed WebSocket + Redis Pub/Sub architecture to support low-latency communication.
+    \item Implemented \textbf{ELO-based ranking system} for fair matchmaking.
+    \item Developed a \textbf{custom compiler} with 3-language support (Go, JS, Python).
+    \item Built multiple modes: \textbf{timed}, \textbf{ranked}, \textbf{1v1}, \textbf{squad/team battles}, and \textbf{public/private rooms}.
+\end{itemize}
+}
+
+\job{BoomBlog – FastAPI Blog Application  \hfill \textbf{Live:} \href{https://blog.yadhuu.live/}{blog.yadhuu.live}}{}{%
+\textit{Tech Stack: FastAPI, PostgreSQL, JWT}
+\begin{itemize}
+    \item Built blog platform with modular REST APIs and JWT authentication.
+    \item Implemented endpoints for posts, comments, and user management.
+    \item Leveraging async processing to handle concurrent requests efficiently.
+\end{itemize}
+}
+
+\job{Time Twist – E-commerce Website}{}{%
+\textit{Tech Stack: Django, PostgreSQL, Razorpay, HTML, CSS, Google Auth}
+\begin{itemize}
+    \item Built watch e-commerce platform with Razorpay payment integration.
+    \item Implemented Google OAuth-based authentication for improved user onboarding.
+    \item Delivered fully responsive UI ensuring mobile-first experience.
+\end{itemize}
+}
+
+\section*{Education}
+
+\job{Full-Stack Development Bootcamp}{Apr 2024 -- Oct 2024}{%
+Brototype, Kerala
+\begin{itemize}
+    \item Intensive hands-on bootcamp focused on Python, Django, React.js, REST APIs, and deployment.
+    \item Built multiple real-world projects including e-commerce platforms and real-time systems.
+\end{itemize}
+}
+
+\job{Bachelor of Commerce (B.Com)}{2018 -- 2021}{%
+Mahatma Gandhi University, Kerala
+\begin{itemize}
+    \item Specialized in accounting and financial analysis. Transitioned into software development via self-learning.
+\end{itemize}
+}
+
+\end{document}
