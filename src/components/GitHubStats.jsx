@@ -127,45 +127,6 @@ const GitHubStats = () => {
               ))}
             </div>
 
-            {/* Snake Animation */}
-            <div style={{
-              padding: '24px',
-              background: 'rgba(255,255,255,0.02)',
-              border: '1px solid rgba(255,255,255,0.05)',
-              borderRadius: '16px',
-              marginBottom: '24px',
-              overflow: 'hidden',
-            }}>
-              <p style={{ color: '#a1a1aa', fontSize: '14px', marginBottom: '16px' }}>Contribution Snake</p>
-              <picture>
-                <source
-                  media="(prefers-color-scheme: dark)"
-                  srcSet={`https://raw.githubusercontent.com/${username}/${username}/output/github-contribution-grid-snake-dark.svg`}
-                />
-                <img
-                  src={`https://raw.githubusercontent.com/${username}/${username}/output/github-contribution-grid-snake.svg`}
-                  alt="GitHub Contribution Snake"
-                  style={{
-                    width: '100%',
-                    borderRadius: '8px',
-                  }}
-                  onError={(e) => {
-                    e.target.style.display = 'none';
-                    e.target.nextSibling.style.display = 'block';
-                  }}
-                />
-                <img
-                  src={`https://ghchart.rshah.org/8b5cf6/${username}`}
-                  alt="GitHub Contribution Graph"
-                  style={{
-                    width: '100%',
-                    borderRadius: '8px',
-                    display: 'none',
-                  }}
-                />
-              </picture>
-            </div>
-
             {/* Contribution Graph */}
             <div style={{
               padding: '24px',
@@ -176,7 +137,7 @@ const GitHubStats = () => {
             }}>
               <p style={{ color: '#a1a1aa', fontSize: '14px', marginBottom: '16px' }}>Contribution Graph</p>
               <img
-                src={`https://ghchart.rshah.org/8b5cf6/${username}`}
+                src={`https://ghchart.rshah.org/22c55e/${username}`}
                 alt="GitHub Contribution Graph"
                 style={{
                   width: '100%',
